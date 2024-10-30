@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
   academyImg: { type: String }, // Optional, to be updated later
   logo: { type: String}, // Optional, to be updated later
   licenseNo: { type: String}, // Optional, to be updated later
+  
 });
 
 const User = mongoose.model('User', userSchema);

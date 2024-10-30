@@ -284,6 +284,20 @@ router.get('/search', async (req, res) => {
   }
 });
 
+router.get('/allUser',async (req,res)=>{
+  try {
+    // Fetch all users with the specified fields (username, logo)
+    const users = await User.find();
+    console.log('Fetched Users:', users); // Debugging log
+    res.status(200).json(users);
+  } catch (error) {
+    console.error('Error fetching users:', error.message); // Debugging log for errors
+    res.status(400).json({ message: error.message });
+  }
+})
+
+
+
 router.get('/all', async (req, res) => {
   try {
     // Fetch only verified users with the specified fields (username, logo)
